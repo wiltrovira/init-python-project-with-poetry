@@ -12,10 +12,10 @@ PYTHON_VERSION="${2:-3.13.5}"
 # ============================
 if [[ -z "$PROJECT_NAME" ]]; then
   RAND_SUFFIX="$(date +%s | sha256sum | cut -c1-6)"
-  PROJECT_NAME="python_project_${RAND_SUFFIX}"
+  PROJECT_NAME="python-project-${RAND_SUFFIX}"
 fi
 
-PACKAGE_NAME="${PROJECT_NAME//-/_}"
+PACKAGE_NAME="${PROJECT_NAME//-/-}"
 
 # ============================
 # VALIDACIONES DE HERRAMIENTAS
@@ -244,6 +244,9 @@ repos:
     rev: 7.3.0
     hooks:
       - id: flake8
+        args:
+          - --max-line-length=88
+          - --extend-ignore=E203,W503
 
   - repo: local
     hooks:
