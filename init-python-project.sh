@@ -5,7 +5,7 @@ set -Eeuo pipefail
 # PARÁMETROS DE ENTRADA
 # ============================
 PROJECT_NAME="${1:-}"
-PYTHON_VERSION="${2:-3.13.5}"
+PYTHON_VERSION="${2:-3.11.14}"
 
 # ============================
 # GENERAR NOMBRE ALEATORIO
