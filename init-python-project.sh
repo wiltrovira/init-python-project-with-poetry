@@ -52,9 +52,10 @@ cd "$PROJECT_NAME"
 # ============================
 # INSTALAR PYTHON (SI NO EXISTE)
 # ============================
-if ! pyenv versions --bare | grep -qx "$PYTHON_VERSION"; then
+if ! pyenv prefix "$PYTHON_VERSION" >/dev/null 2>&1; then
   pyenv install "$PYTHON_VERSION"
 fi
+
 
 # ============================
 # FIJAR PYTHON LOCAL
